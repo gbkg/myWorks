@@ -1,0 +1,69 @@
+<div class="row" style="background-color: rgb(241, 241, 241); height: 60px;">
+
+    <div class="col-1">
+
+        <a href="#" class="close"></a>
+    </div>
+
+
+
+
+    <!--user-->
+    <div class="col-9">
+        <p style="text-align: center; font-size: 20px;">הצעות סטיילינג במיוחד בשבילך</p>
+    </div>
+
+
+
+    <!--log-->
+    <div class="col-2">
+        <div *ngIf='!user.loged'>
+            <div *ngIf='!user.fbLoged'>
+                <p><a routerLink='/login'>כניסה</a> / <a routerLink='/newAcc'>הרשמה</a></p>
+            </div>
+        </div>
+
+
+
+        <div *ngIf='user.loged'>
+
+
+            <a (click)='Logout()' class="logout">Logout</a>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1024px-Noun_Project_question_mark_icon_1101884_cc.svg.png"
+                style="width: 24px; height: 24px;" routerLink='/myStyle'>
+
+
+        </div>
+
+        <div *ngIf='user.fbLoged'>
+
+            <ul style="margin-left: 120px;">
+                <li><img (click)='check()' src={{fbPic}} style="width: 60px; height: 60px;">
+                    <ul [ngStyle]="{'display': !clicked ? 'none' : 'block'}">
+                        <li><a routerLink='/myStyle'> <img style="width: 25px; height: 25px;;"
+                                    src='https://render.fineartamerica.com/images/rendered/default/print/8.000/8.000/break/images-medium-5/man-user-icon-vector-person-symbol-profile-stroke-circle-avatar-sign-in-flat-color-glyph-pictogram-tuktuk-design.jpg'>
+                                פרטים
+                                שלי</a></li>
+                        <li><a routerLink='/favorites'> <img style="width: 25px; height: 25px;;"
+                                    src='data:image/png;base64,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'>
+                                מועדפים</a></li>
+                        <li><a routerLink='/myCart'> <img style="width: 25px; height: 25px;;"
+                                    src='https://previews.123rf.com/images/luka007/luka0071505/luka007150500204/39574212-shopping-cart-icon.jpg'>
+                                סל קניות</a></li>
+                                <li><a (click)='popUp()'> <img style="width: 25px; height: 25px;"
+                                    src='https://static.thenounproject.com/png/57788-200.png'> עזרה</a></li>
+                        <li><a (click)='Logout()'> <img style="width: 25px; height: 25px;;"
+                                    src='data:image/png;base64,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'>להתנתק</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+
+
+</div><br><br>

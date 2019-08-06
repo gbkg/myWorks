@@ -1,0 +1,41 @@
+<div class="stylingBox">
+    <div class="row">
+
+        
+        <a routerLink='/newAcc' style="margin-right: 20px;">התחבר</a>/<a routerLink='/login'>הרשם</a><br>
+        
+    <h2 style="margin-right: 150px;">העדפת סגנונות (מינ' 3):</h2>
+
+    <a routerLink (click)='skip()' style="margin-right: 100px;">דלג</a>
+
+  </div><br>
+  
+  
+  
+  
+      <ul>
+        <li><input type="checkbox" name="dressType" id="cb1" (click)='pushIn("1")' />
+          <label for="cb1"><img src="https://www.uniqlo.com/us/en/news/topics/2018112001/img/mimg_1_m.jpg" /></label>
+        </li>
+        <li><input type="checkbox" name="dressType" id="cb2" (click)='pushIn("2")'/>
+          <label for="cb2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRudXWyPsxpJqwkcwb2Ns0T85b7uJKuTPR5IKKdSzIJJjQDlo_c" /></label>
+        </li>
+        <li><input type="checkbox" name="dressType" id="cb3" (click)='pushIn("3")' />
+          <label for="cb3"><img src="https://cdn3-www.thefashionspot.com/assets/uploads/gallery/how-to-style-old-clothes-new-ways/chiara-ferragni-street-style-getty-2.jpg" /></label>
+        </li>
+      </ul><br>
+  
+      <ul>
+          <li><input type="checkbox" name="dressType" id="cb4" (click)='pushIn("4")' />
+            <label for="cb4"><img src="https://cdn.shopify.com/s/files/1/2714/9310/products/Unique_Vintage_1950s_Style_Emerald_Green_Delores_Swing_Dress_3.jpg?v=1516343228" /></label>
+          </li>
+          <li><input type="checkbox" name="dressType" id="cb5" (click)='pushIn("5")' />
+            <label for="cb5"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHyUzQtN_WajYH57Gddd6rcI8PjXXBOl01zF14zgvT5fx6aIN4_g" /></label>
+          </li>
+          <li><input type="checkbox" name="dressType" id="cb6" (click)='pushIn("6")' />
+            <label for="cb6"><img src="https://restyle.pl/eng_pl_Pin-up-dress-50-style-retro-skirt-evening-circle-dress-ROSES-DRESS-1600_2.jpg" /></label>
+          </li>
+        </ul><br>
+  
+        <button class="btn" type="submit" (click)='collectStyle()'>submit</button>
+  </div>

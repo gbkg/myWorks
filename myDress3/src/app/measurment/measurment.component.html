@@ -1,0 +1,134 @@
+<div class="stylingBox"  style="position: absolute;">
+
+  <app-nav-bar></app-nav-bar>
+
+<app-size-option></app-size-option>
+
+<div class="row">
+  <div class="col-6">
+
+    <app-precise-size *ngIf='style.precise'></app-precise-size>
+    <app-approximate-size *ngIf='!style.precise'></app-approximate-size>
+
+
+   
+  </div>
+
+
+
+
+
+
+  <div class="col-6" style="padding: 0px;">
+      <table style="margin-bottom: 50px;">
+        <tr>
+      
+          <td>
+            <img style="width: 25px; height: 25px; display: inline-block; padding: 0px;" src="https://static.thenounproject.com/png/57788-200.png">
+          </td>
+          <td>
+            <p style="padding: 20px; text-align: center">גובה</p>  
+          </td>
+      
+            <td>
+            <form class="example-form">
+        
+               
+      
+                <mat-form-field class="example-full-width">
+                    <input type="number" [(ngModel)]='style.forms.height' name="height" matInput [placeholder]="style.errHeight ? '136-220 סמ' : 'סמ' " [ngStyle]="{'background-color': style.errHeight ? 'rgb(250, 160, 160)' : 'white'}">
+                </mat-form-field>
+              </form>
+            </td>
+      
+            </tr>
+      
+      
+            <tr>
+      
+                <td>
+                    <span class="popup2" data-popuptext="description">
+                  <img style="width: 25px; height: 25px; display: inline-block;" src="https://static.thenounproject.com/png/57788-200.png">
+                </span>
+                </td>
+                <td>
+                  <p style="padding: 20px; text-align: center">צבע עור</p>  
+                </td>
+            
+                  <td>
+                      <mat-form-field>
+                          <mat-label>צבע עור</mat-label>
+                          <select matNativeControl required [(ngModel)]='style.formsFriend.skin'>
+                              <option value=""></option>
+                            <option value="בהיר מאוד">בהיר מאוד</option>
+                            <option value="בהיר">בהיר</option>
+                            <option value="בינוני">בינוני</option>
+                            <option value="כהה">כהה</option>
+                            <option value="כהה מאוד">כהה מאוד</option>
+                          </select>
+                          </mat-form-field>
+                  </td>
+            
+                  </tr>
+
+      
+            </table><br>
+
+            <div class="example-button-row" style="margin-left: 100%">
+                <button routerLink='/styling' style="border-style: solid; border-color: rgb(206, 205, 205);" mat-button>העדפת סגנונות</button>
+              </div>
+      
+      
+         
+        </div>
+
+        <p style="font: bolder; color: red; margin-right: 70px; margin-bottom: 50px;" *ngIf='!fullField'>*נא למלות את כל השדות</p>
+
+
+
+</div><br><br>
+
+
+
+<div class="row">
+
+    <table style="margin-right: 350px;">
+  
+      <td>
+          <div class="example-button-row" style="padding-left: 40px;">
+              <button style="border-style: solid; border-color: rgb(206, 205, 205); font-size: 20px;" mat-button (click)='save()'>שמירה</button>
+            </div>
+          </td>
+  
+          <td>
+            <div class="example-button-row">
+                <button style="border-style: solid; border-color: rgb(206, 205, 205); font-size: 20px;" mat-button>ביטול</button>
+  
+            </div>
+          </td>
+          </table>
+  
+            </div>
+
+
+  
+
+  </div>
+    
+  
+  <div class="stylingBox2" *ngIf='!style.connected'>
+      <a href="#" class="close" style="margin-left: 500px;"></a><br><br>
+    <p>להמשיך בלי להרשם? (עדיף לזכור אותך לפעם הבאה)</p>
+    <h6>* משתמשים רשומים אינם צריכים להכניס פרטים יותר מפעם אחת</h6><br>
+    
+    <div class="row">
+    
+      <div class="col-6">
+        <a routerLink='/newAcc' class="select">לא, אני רוצה להירשם<span style="color: red;">!</span></a>
+      </div>
+    
+      <div class="col-6">
+          <a routerLink='/clothVar' class="select">כן, באסה איתי :\</a>
+        </div>
+    
+    </div>

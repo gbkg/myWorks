@@ -1,0 +1,49 @@
+.stylingBox{
+    background-color: white;
+    border-style: solid;
+    width: 900px;
+    height: 650px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    overflow: auto;
+    position:relative;
+    margin-right: 300px;
+    }
+
+    .title{
+        background-color: rgb(250, 242, 242);
+        height: 50px;
+        width: 100%;
+    }
+
+    .par{
+        font: bold;
+        font-weight: bold;
+        display: inline-block;
+        margin-left: 100px;
+    }
+
+    .user{
+        margin-left: 450px;
+        margin-top: -35px;
+    }
+
+    .explain{
+        margin-left: 60%;
+        margin-top: 50px;
+        font-weight: bold;
+    }
+
+    /*button*/
+
+    .button4 {
+        background-color: rgb(243, 234, 234);
+        color: black;
+        border: 2px solid #e7e7e7;
+        width: 70%;
+        margin-top: 50px;
+        margin-left: 150px;
+        border: grey;
+        border-style: solid;
+        border-color: grey;
+      }

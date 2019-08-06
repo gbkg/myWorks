@@ -1,0 +1,248 @@
+.stylingBox {
+  background-color: white;
+  border-style: solid;
+  width: 900px;
+  height: 650px;
+  margin-top: 50px;
+  padding-bottom: 20px;
+  overflow: auto;
+  margin-right: 30%;
+  position: absolute;
+}
+
+.explanation {
+  background-color: white;
+  border-style: solid;
+  width: 650px;
+  height: 450px;
+  margin-top: 80px;
+  margin-right: 600px;
+  padding-bottom: 20px;
+  overflow: auto;
+  position: absolute;
+}
+
+
+.friendMeasure {
+  width: 200px;
+  height: 100px;
+  background-color: white;;
+}
+
+mat-form-field{
+  width: 150px;
+}
+
+.font {
+  color: black;
+}
+
+.options {
+  width: 80px;
+  padding-left: 20px;
+}
+
+.var {
+  padding-left: 20px;
+}
+
+
+#myButton {
+  color: white;
+}
+
+.filterBtn {
+  background-color: white;
+}
+
+
+.emailWidth {
+  display: inline-block;
+}
+
+
+/*settings*/
+.settings {
+  padding-left: 80px;
+}
+
+
+/*select option*/
+
+.wrap {
+  position: absolute;
+  right: 0;
+  width: 170px;
+  left: 0;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* select starting stylings ------------------------------*/
+.select {
+  font-family:
+    'Roboto', 'Helvetica', 'Arial', sans-serif;
+  position: relative;
+  width: 170px;
+}
+
+.select-text {
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 170px;
+  padding: 10px 10px 10px 0;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Remove focus */
+.select-text:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+/* Use custom arrow */
+.select .select-text {
+  appearance: none;
+  -webkit-appearance: none
+}
+
+.select:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+
+/* LABEL ======================================= */
+.select-label {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+.select-text:focus~.select-label,
+.select-text:valid~.select-label {
+  color: #2F80ED;
+  top: -20px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+
+/* BOTTOM BARS ================================= */
+.select-bar {
+  position: relative;
+  display: inline-block;
+  width: 170px;
+}
+
+.select-bar:before,
+.select-bar:after {
+  content: '';
+  height: 1px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #2F80ED;
+  transition: 0.2s ease all;
+}
+
+.select-bar:before {
+  left: 50%;
+}
+
+.select-bar:after {
+  right: 50%;
+}
+
+/* active state */
+.select-text:focus~.select-bar:before,
+.select-text:focus~.select-bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.select-highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
+/*close button*/
+
+.close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.help {
+  height: 20px;
+  width: 20px;
+}
+
+.mIcon {
+  display: inline-block;
+}
+
+.mIcon .mIconText {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.mIcon:hover .mIconText {
+  visibility: visible;
+}
