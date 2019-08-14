@@ -1,0 +1,12 @@
+
+<div *ngIf='serv.signed' class="box">
+  <h2 class="par">Sign up</h2>
+  <p>NO. <input type="text" [(ngModel)]="IDWorker"></p>
+  <p *ngIf='errID' class="err">the number must be 5 digit</p>
+  <p>FullName <input type="text" [(ngModel)]="FN"></p>
+  <p *ngIf='errFN' class="err">the name must contain minimum 4 characters</p>
+  <p>Forklift truck</p>
+  <input type="text" placeholder="yes/no" [(ngModel)]='Tlisence'><br><br>
+  <p *ngIf='errTL' class="err">please write yes/no</p>
+  <button class="btn" (click)='create()'>create</button>
+</div>

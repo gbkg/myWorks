@@ -1,0 +1,47 @@
+<div class="main" *ngIf='serv.mainP'>
+  <h2 class="par">Logistic Management</h2><br>
+  <button class="btn" (click)='sign()' routerLink='signIn' >Sign in</button><br><br><br>
+  <button class="btn" (click)='log()'>Log in</button>
+</div>
+
+<div class="main" *ngIf='login'>
+  <h2 class="par">login</h2>
+  <p class="par">NO.<input type="text" [(ngModel)]='myID'></p>
+  <button class="btn" (click)='Enter()'>Enter</button>
+</div>
+
+<div *ngIf='stock' class="main">
+  <h2>Welcome {{selectFN}}</h2>
+  <p>Details</p>
+  <p>Full Name: {{selectFN}}</p>
+  <p>NO: {{selectID}}</p>
+  <p>Forklift truck lisence: {{selectLisence}}</p>
+  <p>List of products</p>
+
+  <div *ngFor="let i of serv.arrMyProducts" class="pBox">
+    <p>NO: {{i.getIDP()}}</p>
+    <p>need forklift truck: {{i.getForkliftNeed()}}</p>
+    <p>Name: {{i.getProductName()}}</p>
+    <p>in place: {{i.getInPlace()}}</p>
+    <button class="btn" (click)='takeOf(i)'>Update</button>
+
+  </div><br><br>
+  <button class="btn" (click)='logOut()'>Log Out</button>
+</div>
+
+<div *ngIf='serv.manager' class="manager">
+  <table>
+    <h2 class="par">Manager</h2><br><br>
+    <tr>
+    <th>NO</th> <th>FullName</th> <th>counter</th> <th>Number of products</th>
+  </tr>
+
+  <tr *ngFor="let i of serv.worker1" >
+    <td>{{i.getID()}}</td>
+    <td>{{i.getFullName()}}</td>
+    <td>{{i.getVisits()}}</td>
+    <td>{{i.getNumberOP()}}</td>
+  </tr>
+  <button class="btn" (click)='logOut()'>Log Out</button>
+  </table>
+</div>

@@ -1,0 +1,40 @@
+.main{
+    margin-left: 300px;
+    margin-top:150px;
+    background-color: grey;
+    width: 600px;
+}
+
+.par{
+    text-align: center;
+}
+
+.btn{
+    margin-left: 42%;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    height: 60px;
+    width: 100px;
+    margin-top: 50px;
+}
+
+.pBox{
+    background-color: white;
+    width: 400px;
+    margin-left: 50px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  .manager{
+    margin-left: 300px;
+    margin-top:150px;
+    background-color: grey;
+    width: 600px;   
+    position: absolute;
+    display: inline-block;
+  }
