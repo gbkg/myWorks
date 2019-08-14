@@ -1,0 +1,49 @@
+#head{
+    text-align: center;
+    color: blue;
+    font-size: 50px;
+    text-shadow: 5px 5px gray;
+}
+
+#mainInput{
+    margin-left: 35%;
+    width: 200px;
+    height: 50px;
+}
+
+#startB{
+    border-radius: 6px;
+    background-color: blue;
+    color: white;
+    display: block;
+    margin-top: 40px;
+    margin-left: 43%;
+    width: 75px;
+    height: 50px;
+}
+
+#cardComp{
+    width: 100px;
+    height: 100px;
+    border: 25px solid rgb(2, 15, 2);
+}
+
+#cardPers{
+    width: 100px;
+    height: 100px;
+    border: 25px solid rgb(2, 15, 2);
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+#user{
+    margin-left: 340px;
+    margin-top: 50px;
+}
+
+.score{
+    text-align: center;
+    text-shadow: 2px 2px rgb(43, 73, 207);
+    font-weight: bold;
+    font-size: 60px;
+}

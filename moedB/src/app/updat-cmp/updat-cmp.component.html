@@ -1,0 +1,16 @@
+<div class="main">
+  <h2 class="par">Update</h2>
+  <table>
+    <tr>
+      <th>TYPE</th><th>VALUE</th>
+    </tr>
+    <tr *ngFor="let i of serv.arrCoins">
+      <td>{{i.getKind()}}</td>
+      <td>{{i.gerValue()}}</td>
+    </tr>
+  </table>
+
+  <p>Type  <input type="text" [(ngModel)]='type'></p>
+  <p>New Value  <input type="number" [(ngModel)]='value'></p><br><br><br>
+  <button class="btn" routerLink='/main'>BACK</button> <button class="btn" (click)='updateNewV()'>UPDATE</button>
+</div>

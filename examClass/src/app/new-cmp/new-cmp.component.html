@@ -1,0 +1,27 @@
+<div *ngIf='menu'>
+
+    <h1 id="head"> Ready for WAR </h1>
+  
+    <input id="mainInput" placeholder="Enter your name" type="text" [(ngModel)]="inputValue">
+  
+    <button id="startB" (click)='start()'>Start</button>
+  
+  
+  </div>
+
+  <div *ngIf='game'>
+    <p>computer   {{comp}}</p>
+    <div id="cardComp">{{opCard}}</div>
+    <div id="cardPers">{{myCrd}}</div>
+    <p id="user">{{inputValue}}   {{player}}</p>
+    <button (click)='nextCard()'><img src="http://www.sclance.com/pngs/deck-of-cards-png/deck_of_cards_png_375673.png" width="80px" height="100px"></button>
+  </div>
+
+
+  <div *ngIf="score" class="score">
+    <p>wins</p>
+    <p>{{wins}}</p>
+    <p>lost</p>
+    <p>{{losts}}</p>
+    <button (click)='newGame()'>New Game</button>
+  </div>

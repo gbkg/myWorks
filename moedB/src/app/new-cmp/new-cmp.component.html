@@ -1,0 +1,23 @@
+<div class="main">
+  <h2>Exchange</h2>
+  <p>From: <select name="type" [(ngModel)]='typeFrom'>
+    <option *ngFor="let i of serv.arrCoins"> {{i.getKind()}}</option>
+  </select>
+  <input type="number" [(ngModel)]='mount' [(ngModel)]='isValid'>
+  </p>
+  <p>To: <select name="type" [(ngModel)]='typeTo'>
+      <option *ngFor="let i of serv.arrCoins"> {{i.getKind()}}</option>
+  </select></p>
+  <button (click)='start()' [disabled]="!isValid">start</button><br><br><br>
+  <button class="btn" routerLink='/update' (click)='upd()'>Update</button><button class="btn" (click)='listView()'>view your exchange list</button>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+    Share on Facebook
+  </a>
+ <div *ngIf='view'>
+  <div *ngFor="let i of serv.arrExList" class="box">
+    <p># {{i.getTimesOfEx()}}</p>
+    <p>{{i.getFromTo()}}</p>
+    <p>{{i.getValueFrom()}} = {{i.getValueTo()}}</p>
+  </div><br><br><br>
+</div>
+</div>>
