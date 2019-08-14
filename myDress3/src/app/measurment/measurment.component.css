@@ -1,0 +1,57 @@
+.stylingBox{
+  background-color: white;
+  border-style: solid;
+  width: 1000px;
+  height: 650px;
+  margin-top: 50px;
+  padding-bottom: 20px;
+  overflow: auto;
+  position:relative;
+  margin-right: 300px;
+  }
+
+  .stylingBox2{
+    margin-top: 150px;
+    background-color: white;
+    width: 550px;
+    margin-right: 800px;
+    border-style: solid;
+    overflow: auto;
+    position:relative;
+    height: 200px;
+    border-width: thin;
+    position: absolute;
+    z-index: 1;
+  }
+
+
+   /*scale*/
+
+
+  .scale{
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .str{
+    margin-left: 40px;
+    display: inline-block;
+  }
+
+  /*help*/
+
+  #thumbwrap {
+    position:relative;
+  }
+  .thumb span { 
+    position:absolute;
+    visibility:hidden;
+  }
+  .thumb:hover, .thumb:hover span { 
+    visibility:visible;
+    top:0;
+    left:100px; 
+    z-index:1;
+  }
+
+  

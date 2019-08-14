@@ -1,0 +1,10 @@
+
+
+      <mat-form-field style="width: 400px; margin-left: 450px;">
+          <select matNativeControl required [ngModel]="selectedDevice" (ngModelChange)="onChange($event)">
+              <option [value]="true" selected> למידה מדויקת (ערכים מדויקים)</option>
+            <option [value]="false" > ערכים משוערים (לא אופטימלי) </option>
+          </select>
+        </mat-form-field>
+
+

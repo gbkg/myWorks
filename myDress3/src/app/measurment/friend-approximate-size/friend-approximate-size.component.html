@@ -1,0 +1,150 @@
+<div class="row">
+        <div class="col-8">
+                <h5 style="margin-left: 150px; text-decoration: underline;"
+                        [ngStyle]="{'background-color': style.errApproximateStyle1 ? 'rgb(250, 160, 160)' : 'white'}">יש
+                        לסמן את מבנה
+                        הגוף הרלוונטי:</h5>
+                <table>
+                        <tr>
+                                <td>
+                                        <label>
+                                                <input type="radio" name="test" value="1"
+                                                        [(ngModel)]='style.approximateFormsFriend.style1'>
+                                                <img src="assets/images/size1.jpg" alt="" width="81px" height="215px">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="test" value="2"
+                                                        [(ngModel)]='style.approximateFormsFriend.style1'>
+                                                <img src="assets/images/size3.jpg" alt="" width="81px" height="215px">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="test" value="3"
+                                                        [(ngModel)]='style.approximateFormsFriend.style1'>
+                                                <img src="assets/images/size4.jpg" alt="" width="81px" height="215px">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="test" value="4"
+                                                        [(ngModel)]='style.approximateFormsFriend.style1'>
+                                                <img src="assets/images/size5.jpg" alt="" width="81px" height="215px">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="test" value="5"
+                                                        [(ngModel)]='style.approximateFormsFriend.style1'>
+                                                <img src="assets/images/size2.jpg" alt="" width="81px" height="215px">
+                                        </label>
+                                </td>
+                        </tr>
+                </table>
+                <h5 style="margin-left: 90px; text-decoration: underline"
+                        [ngStyle]="{'background-color': style.errApproximateStyle2 ? 'rgb(250, 160, 160)' : 'white'}">יש
+                        לסמן את
+                        פרופורציית הגוף הרלוונטית::</h5>
+                <table>
+                        <tr>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="full" value="1"
+                                                        [(ngModel)]='style.approximateFormsFriend.style2'>
+                                                <img src="assets/images/full-img1.jpg" alt="" width="56px"
+                                                        height="205px" style="margin-right: 20px;">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="full" value="2"
+                                                        [(ngModel)]='style.approximateFormsFriend.style2'>
+                                                <img src="assets/images/full-img2.jpg" alt="" width="56px"
+                                                        height="205px" style="margin-right: 20px;">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="full" value="3"
+                                                        [(ngModel)]='style.approximateFormsFriend.style2'>
+                                                <img src="assets/images/full-img3.jpg" alt="" width="66px"
+                                                        height="205px" style="margin-right: 10px;">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="full" value="4"
+                                                        [(ngModel)]='style.approximateFormsFriend.style2'>
+                                                <img src="assets/images/full-img4.jpg" alt="" width="73px"
+                                                        height="205px" style="margin-right: 10px;">
+                                        </label>
+                                </td>
+
+                                <td>
+                                        <label>
+                                                <input type="radio" name="full" value="5"
+                                                        [(ngModel)]='style.approximateFormsFriend.style2'>
+                                                <img src="assets/images/full-img5.jpg" alt="" width="84px"
+                                                        height="205px" style="margin-right: 10px;">
+                                        </label>
+                                </td>
+                        </tr>
+                </table>
+        </div>
+
+        <div class="col-4">
+                <table style="text-align: right; padding: 5px;">
+
+                        <tr>
+                                <td>גובה:</td>
+                                <td>
+                                        <mat-form-field>
+                                                <input type="number" [(ngModel)]='style.approximateFormsFriend.height'
+                                                        name="height" matInput
+                                                        [placeholder]="style.errHeight ? '136-220 סמ' : 'סמ' "
+                                                        [ngStyle]="{'background-color': style.errHeight ? 'rgb(250, 160, 160)' : 'white'}">
+                                        </mat-form-field>
+                                </td>
+                        </tr>
+
+                        <tr>
+                                <td>צבע עור:</td>
+                                <td>
+                                        <mat-form-field>
+                                                <mat-label>צבע עור</mat-label>
+                                                <select matNativeControl required [(ngModel)]='style.approximateFormsFriend.skin'>
+                                                        <option value=""></option>
+                                                        <option value="בהיר מאוד">בהיר מאוד</option>
+                                                        <option value="בהיר">בהיר</option>
+                                                        <option value="בינוני">בינוני</option>
+                                                        <option value="כהה">כהה</option>
+                                                        <option value="כהה מאוד">כהה מאוד</option>
+                                                </select>
+                                        </mat-form-field>
+                                </td>
+                        </tr>
+
+                        <tr></tr>
+                        <tr></tr>
+
+                        <tr>
+                                        <td><button mat-button (click)='save()'>שמירה</button></td>
+                                        <td><button mat-button (click)='approximate()'>מדדים מדויקים</button></td>
+                        </tr>
+
+                </table>
+        </div>
+
+
+
+</div>

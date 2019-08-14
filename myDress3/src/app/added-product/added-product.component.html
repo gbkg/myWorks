@@ -1,0 +1,66 @@
+<div class="added" style="position: absolute; z-index: 1;">
+    <div class="row">
+        <div class="col-6">
+            <p style="font-size: 13px; margin-right: 20px;">הפריט נוסף לסל הקניות</p>
+        </div>
+        <div class="col-6">
+            <a (click)='close()' class="close"></a>
+        </div>
+    </div><br>
+
+    <div class="row">
+        <div class="col-4">
+            <img src={{itemInfo.pic}} width="100px;"
+                height="130px;" style="margin-right: 10px;">
+        </div>
+        <div class="col-8" style="font-size: 10px; font: bold;">
+            <table style="text-align: right">
+                <tr>
+                    <td>
+                        <p style="margin-left: 100%; height: 3px;">פירוט</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> מק"ט:</td>
+                    <td>{{itemInfo.barcode}}</td>  
+                </tr>
+
+                <tr>
+                        <td>צבע:</td>
+                        <td>{{itemInfo.color}}</td>
+                </tr>
+
+                <tr>
+                        <td>מידה:</td>
+                        <td>{{itemInfo.size}}</td>
+                </tr>
+                <tr>
+                        <td>מחיר:</td>
+                        <td>{{itemInfo.price}}</td>
+                </tr>
+                <tr>
+                        <td>כמות:</td>
+                        <td>{{itemInfo.QTY}}</td>
+                </tr>
+                <tr>
+                        <td>סה"כ:</td>
+                        <td>{{itemInfo.total}}</td>
+                </tr>
+            </table>
+        </div>
+    </div><br>
+
+    <div class="row">
+        <div class="col-4" style="font-size: 10px; cursor: context-menu;">
+            <p>בסל הקניות {{cart.totItems}} פריטים</p>
+        </div>
+        <div class="col-4" style="font-size: 10px; cursor: context-menu;">
+            <p>סה"ב: {{cart.totPrice}}</p>
+        </div>
+        <div class="col-4">
+            <button mat-button routerLink='/myCart' (click)='moveToCart()'>לסל</button>
+        </div>
+    </div>
+
+</div>

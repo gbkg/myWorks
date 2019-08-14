@@ -1,0 +1,20 @@
+
+
+    /*radio button*/
+
+    /* HIDE RADIO */
+    [type=radio] { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      /* IMAGE STYLES */
+      [type=radio] + img {
+        cursor: pointer;
+      }
+      
+      /* CHECKED STYLES */
+      [type=radio]:checked + img {
+        border-bottom: 5px solid rgb(90, 158, 221);; 
+      }

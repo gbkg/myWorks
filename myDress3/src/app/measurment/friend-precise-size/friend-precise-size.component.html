@@ -1,0 +1,55 @@
+<tr style="text-align: center">
+        <td><p class="font">גובה</p></td>
+        <td><p class="font">היקף חזה</p></td>
+        <td><p class="font">היקף מותניים</p></td>
+        <td><p class="font">היקף ירכיים</p></td>
+        <td><p class="font">צבע עור</p></td>
+        <td><button mat-button (click)='save()'>שמירה</button></td>
+      </tr>
+
+      <tr>
+
+        <td>
+                <mat-form-field>
+                    <input type="number" [(ngModel)]='style.formsFriend.height' name="height" matInput [placeholder]="style.errHeight ? '136-220 סמ' : 'סמ' " [ngStyle]="{'background-color': style.errHeight ? 'rgb(250, 160, 160)' : 'white'}">
+                </mat-form-field>
+    </td>
+
+
+      <td>
+              <mat-form-field>
+                <input type="number" [(ngModel)]='style.formsFriend.chest' name="chest" matInput [placeholder]="style.errChest ? '55-140 סמ' : 'סמ' " [ngStyle]="{'background-color': style.errChest ? 'rgb(250, 160, 160)' : 'white'}">
+              </mat-form-field>
+      </td>
+
+
+        <td>
+                <mat-form-field>
+                    <input type="number" [(ngModel)]='style.formsFriend.waist' name="waist" matInput [placeholder]="style.errWaist ? '37-130 סמ' : 'סמ' " [ngStyle]="{'background-color': style.errWaist ? 'rgb(250, 160, 160)' : 'white'}">
+                </mat-form-field>
+      </td>
+
+
+        <td>
+                <mat-form-field>
+                    <input type="number" [(ngModel)]='style.formsFriend.hips' name="hips" matInput [placeholder]="style.errHips ? '66-155 סמ' : 'סמ' " [ngStyle]="{'background-color': style.errHips ? 'rgb(250, 160, 160)' : 'white'}">
+                </mat-form-field>
+      </td>
+
+
+
+        <td>
+            <mat-form-field>
+                <mat-label>צבע עור</mat-label>
+                <select matNativeControl required [(ngModel)]='style.formsFriend.skin'>
+                    <option value=""></option>
+                  <option value="בהיר מאוד">בהיר מאוד</option>
+                  <option value="בהיר">בהיר</option>
+                  <option value="בינוני">בינוני</option>
+                  <option value="כהה">כהה</option>
+                  <option value="כהה מאוד">כהה מאוד</option>
+                </select>
+                </mat-form-field>
+      </td>
+      <td><button mat-button (click)='approximate()'>מדדים משוערים</button></td>
+      </tr>

@@ -1,0 +1,145 @@
+<div class="stylingBox">
+  <a routerLink='/main' class="close"></a><br><br>
+
+
+  <div class="row">
+    <div class="col-6">
+
+
+      <h2 id="title">תאור פריט</h2><br><br>
+
+
+
+      <div style="margin-left: 200px">
+
+
+        <p class="middle" id="price">{{cloth.showDetailCloth.getPrice()}} &#x20aa;</p>
+      </div>
+      <br><br><br>
+
+
+          <table style="margin-right: 50px;">
+
+            <tr>
+            <td>
+              <p style="text-align: center;">צבע: </p>
+            </td>
+
+            <div style="margin-left: 100%">
+            <td *ngFor='let i of cloth.showDetailCloth.getColorCloth()'>
+              
+              <img src={{i.getColorPic()}} width="30px" height="30px" style="cursor: pointer;"
+                (click)='colorSelect(i.getColor())' class="colorPic"
+                [ngStyle]="{'border-color': myColor === i.getColor()? 'black':'white'}">
+              
+            </td>
+          </div>
+          </tr>
+
+<tr>
+          <td>
+              <p style="text-align: center;">מידה: </p>
+          </td>
+
+            <td>
+          <div>
+            <div class="size" *ngFor='let i of selectedSizes'
+              [ngStyle]="{'background-color': mySize === i? 'yellow':'white'}">
+              <a type="submit" (click)='sizeChoose(i)' [ngStyle]="{'background-color': mySize === i? 'yellow':'white'}">
+                {{i}} </a>
+          </div>
+        </div>
+      </td>
+    </tr>
+      </table>
+
+      <br><br>
+
+
+      <!--qty-->
+
+      <div style="margin-left: 80px; display: inline-block">
+        <table>
+
+          <tr>
+
+            <td>
+        <!--add to favorite-->
+        <input id="toggle-heart" type="checkbox" [(ngModel)]='isActive' (click)='addToFavorite()' />
+        <label for="toggle-heart" style=" padding-left: 30px;">❤</label>
+      </td>
+
+        <td>
+        <button style="border-radius: 20px; background-color: red; color: white;" (click)='add(-1)'>-</button>
+        <input type="text" size="4" class="qty" [(ngModel)]='qty'>
+        <button style="border-radius: 20px; background-color: red; color: white;" (click)='add(1)'>+</button>
+      </td>
+
+        <td>
+        <!--add button-->
+        <div style=" padding-right: 30px;">
+          <button (click)='addToChart()' style="width: 150px; background-color: red; color: white;">הוסף
+            לסל</button>
+        </div>
+      </td>
+
+      </tr>
+      </table>
+      </div><br><br>
+
+
+
+
+
+    </div>
+
+
+
+
+    <div class="col-6">
+
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+      <div class="row">
+        <div class="col-6"></div>
+
+        <div class="w3-content">
+          <img class="mySlides zoom" src={{selectedClothPic[0]}} style="height: 400px;width: 400px;display:none">
+          <img class="mySlides" src={{selectedClothPic[1]}} style="height: 400px;width: 400px">
+          <img class="mySlides" src={{selectedClothPic[2]}} style="height: 400px;width: 400px;display:none">
+          <img class="mySlides" src={{selectedClothPic[3]}} style="height: 400px;width: 400px;display:none">
+
+
+          <div class="col-6"></div>
+          <div class="w3-row-padding w3-section" style="display: inline-block">
+            <div class="w3-col s3">
+              <img class="demo w3-opacity w3-hover-opacity-off" src={{selectedClothPic[0]}} (click)="currentDiv(1)"
+                style="height: 70px;width: 70px;cursor:pointer; display: inline-block">
+            </div>
+            <div class="w3-col s3">
+              <img class="demo w3-opacity w3-hover-opacity-off" src={{selectedClothPic[1]}} (click)="currentDiv(2)"
+                style="height: 70px;width: 70px;cursor:pointer; display: inline-block">
+            </div>
+            <div class="w3-col s3">
+              <img class="demo w3-opacity w3-hover-opacity-off" src={{selectedClothPic[2]}} (click)="currentDiv(3)"
+                style="height: 70px;width: 70px;cursor:pointer; display: inline-block">
+            </div>
+            <div class="w3-col s3">
+              <img class="demo w3-opacity w3-hover-opacity-off" src={{selectedClothPic[3]}} (click)="currentDiv(4)"
+                style="height: 70px;width: 70px;cursor:pointer; display: inline-block">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  <button routerLink='/clothVar' mat-button>Back</button>
+
+</div>

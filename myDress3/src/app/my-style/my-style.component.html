@@ -1,0 +1,102 @@
+<div class="stylingBox">
+
+    <app-nav-bar></app-nav-bar>
+
+    <br><br>
+
+    <app-size-option></app-size-option>
+
+    <h1 style="text-align: center">שינוי מידות:</h1><br><br>
+
+    <div class="row">
+            <div class="col-6">
+          
+              <app-precise-size *ngIf='style.precise'></app-precise-size>
+              <app-approximate-size *ngIf='!style.precise'></app-approximate-size>
+          
+          
+             
+            </div>
+          
+          
+          
+          
+          
+          
+            <div class="col-6" style="padding: 0px;">
+                <table style="margin-bottom: 50px;">
+                  <tr>
+                
+                    <td>
+                        <div id="thumbwrap">
+                            <a class="thumb" href="#"><img class="sign" style="width: 25px; height: 25px; display: inline-block; padding: 0px;" src="https://static.thenounproject.com/png/57788-200.png"><span><img src="assets/help/height_help.jpg" alt="" width="400px;" height="520px;"></span></a>
+                        </div>
+                    </td>
+                    <td>
+                      <p style="padding: 20px; text-align: center">גובה</p>  
+                    </td>
+                
+                      <td>
+                      <form class="example-form">
+          
+                          <mat-form-field class="example-full-width">
+                              <input type="number" [(ngModel)]='style.forms.height' name="height" matInput [placeholder]="style.errHeight ? '136-220 סמ' : 'סמ' " [ngStyle]="{'background-color': style.errHeight ? 'rgb(250, 160, 160)' : 'white'}">
+                          </mat-form-field>
+                        </form>
+                      </td>
+                
+                      </tr>
+                
+                
+                      <tr>
+                
+                          <td>
+                              <span class="popup2" data-popuptext="description">
+                            <img style="width: 25px; height: 25px; display: inline-block;" src="https://static.thenounproject.com/png/57788-200.png">
+                          </span>
+                          </td>
+                          <td>
+                            <p style="padding: 20px; text-align: center">צבע עור</p>  
+                          </td>
+                      
+                            <td>
+                                <mat-form-field>
+                                    <mat-label>צבע עור</mat-label>
+                                    <select matNativeControl required [(ngModel)]='style.forms.skin'>
+                                        <option value=""></option>
+                                      <option value="בהיר מאוד">בהיר מאוד</option>
+                                      <option value="בהיר">בהיר</option>
+                                      <option value="בינוני">בינוני</option>
+                                      <option value="כהה">כהה</option>
+                                      <option value="כהה מאוד">כהה מאוד</option>
+                                    </select>
+                                    </mat-form-field>
+                            </td>
+                      
+                            </tr>
+          
+                
+                      </table>
+                    </div>
+    <br><br><br>
+
+
+    <div>
+    <h1 style="text-align: center">שינוי פרופיל:</h1><br>
+    <table>
+        <tr>
+            <td>אימייל: {{user.tempAcc.getEmail()}}</td>
+        </tr>
+        <tr *ngIf='!user.fbLoged'>
+            <td>change password: </td>
+            <td *ngIf='replacePass'>Old password: <input type="text" [(ngModel)]='oldPass'> <a (click)='checkPass()'
+                    style='cursor: pointer; margin-left: 20px; color: blue'>check</a></td>
+            <td *ngIf='!replacePass'>New password: <input type="text" [(ngModel)]='newPass'></td>
+            <td *ngIf='wrongPss' style="color: red;">*password not match</td>
+        </tr>
+    </table><br><br>
+
+    <button mat-button class='sub' (click)='sub()'>שמור שינויים</button>
+</div>
+
+

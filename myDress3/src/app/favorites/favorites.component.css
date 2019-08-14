@@ -1,0 +1,93 @@
+.stylingBox {
+  background-color: white;
+  border-style: solid;
+  width: 900px;
+  height: 650px;
+  margin-top: 50px;
+  padding-bottom: 20px;
+  margin-right: 300px;
+  overflow: auto;
+  position: absolute;
+}
+
+.massage{
+  background-color: white;
+  border-style: solid;
+  width: 250px;
+  height: 150px;
+  margin-top: 50px;
+  padding-bottom: 20px;
+  margin-right: 300px;
+  overflow: auto;
+  position: relative;
+}
+
+/*cart*/
+
+.cart {
+  display: inline-block;
+}
+
+
+.emailWidth {
+  display: inline-block;
+}
+
+.pMessurment {
+  height: 20px;
+  width: 20px;
+}
+
+.mIcon {
+  display: inline-block;
+}
+
+/*settings*/
+.settings {
+  padding-left: 80px;
+}
+
+
+/*close button*/
+
+.close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+/*remove*/
+
+.remove {
+  color: blue;
+  cursor: pointer;
+}
+
+.remove:hover {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}

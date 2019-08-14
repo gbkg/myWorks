@@ -1,0 +1,76 @@
+<div class="stylingBox">
+
+
+  <app-nav-bar></app-nav-bar>
+
+  
+<br><br>
+        
+        <button routerLink='/clothVar' mat-button>Back</button><br><br>
+
+
+
+
+        <!--my favoritea-->
+        <div class="container">     
+                <div class="table-responsive">          
+                <table class="table">
+                  <thead>
+                    <tr style="text-align: right">
+                        <th></th>
+                        <th>פריט</th>
+                        <th>תכונות</th>
+                        <th>מחיר/יחידה</th>
+                        <th>כמות</th>               
+                        <th>סך מחיר</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngIf='emptyFavorite'>
+                    <tr *ngFor='let item of cart.clothsInFavorite' style="text-align: right">
+                        <td><img src={{item.getColorCloth()[0].getClothPic()[0]}} width="100px" height="100px" (click)='itemSelect(item)'></td>
+                        <td>
+                          <p class="remove" (click)='addCart(item.getBarcode(), item.getColorCloth()[0].getClothPic()[0], item.getQty(), item.getPrice())'>הוסף לסל קניות</p>
+                          <p class="remove" (click)='favoriteRemove(item.getBarcode())'>הסר</p>
+                        </td>
+                      <td> 
+
+
+                          <mat-form-field>
+                              <mat-label>צבע</mat-label>
+                              <select matNativeControl required [(ngModel)]='color'>
+                                  <option value=""></option>
+                                <option *ngFor='let colors of item.getColorCloth()' value={{colors.getColor()}}> {{colors.getColor()}}</option>
+                              </select>
+                              </mat-form-field><br>
+
+
+                              <mat-form-field>
+                                  <mat-label>מידה</mat-label>
+                                  <select matNativeControl required [(ngModel)]='size'>
+                                      <option value=""></option>
+                                    <option *ngFor='let size of item.getColorCloth()[0].getSizes()'> {{size}}</option>
+                                  </select>
+                                  </mat-form-field><br>
+
+
+                       </td>
+                      <td></td>
+                      <td>
+                          <button style="size: 2px;" (click)='add(item.setQty(-1))' mat-mini-fab color="primary">-</button>
+                          {{item.getQty()}}
+                          <button (click)='add(item.setQty(1))' mat-mini-fab color="primary">+</button>
+                      </td>
+                      <td>{{item.getPrice()}}</td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+              </div>
+
+              
+</div>
+
+<div *ngIf='connect.addedItem'>
+  <app-added-product></app-added-product>
+</div>

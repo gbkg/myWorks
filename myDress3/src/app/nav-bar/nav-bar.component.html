@@ -1,0 +1,69 @@
+<div class="row" style="background-color: rgb(241, 241, 241); height: 60px;">
+
+    <div class="col-1">
+
+        <a href="#" class="close"></a>
+    </div>
+
+
+
+
+    <!--user-->
+    <div class="col-9">
+        <p style="text-align: center; font-size: 20px;">הצעות סטיילינג במיוחד בשבילך</p>
+    </div>
+
+
+
+    <!--log-->
+    <div class="col-2">
+        <div *ngIf='!user.loged'>
+            <div *ngIf='!user.fbLoged'>
+                <p><a routerLink='/login'>כניסה</a> / <a routerLink='/newAcc'>הרשמה</a></p>
+            </div>
+        </div>
+
+
+
+        <div *ngIf='user.loged'>
+
+
+            <a (click)='Logout()' class="logout">Logout</a>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1024px-Noun_Project_question_mark_icon_1101884_cc.svg.png"
+                style="width: 24px; height: 24px;" routerLink='/myStyle'>
+
+
+        </div>
+
+        <div *ngIf='user.fbLoged' style="position: absolute; z-index: 1;">
+
+            <ul>
+                <li><img (click)='check()' src={{fbPic}} style="width: 60px; height: 60px;">
+                    <ul [ngStyle]="{'display': !clicked ? 'none' : 'block'}">
+                        <li><a mat-raised-button style="width: 120px; padding: 0;" routerLink='/myStyle'><span style="margin-left: 100%"> <img style="width: 25px; height: 25px;"
+                                    src='https://render.fineartamerica.com/images/rendered/default/print/8.000/8.000/break/images-medium-5/man-user-icon-vector-person-symbol-profile-stroke-circle-avatar-sign-in-flat-color-glyph-pictogram-tuktuk-design.jpg'>
+                                פרטים
+                                שלי</span></a></li>
+                        <li><a mat-raised-button  style="width: 120px; padding: 0;" routerLink='/favorites'> <span style="margin-left: 100%"> <img style="width: 25px; height: 25px;"
+                                    src='https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-512.png'>
+                                מועדפים</span></a></li>
+                        <li><a mat-raised-button style="width: 120px; padding: 0;" routerLink='/myCart'> <span style="margin-left: 100%"> <img style="width: 25px; height: 25px;"
+                                    src='https://previews.123rf.com/images/luka007/luka0071505/luka007150500204/39574212-shopping-cart-icon.jpg'>
+                                סל קניות</span></a></li>
+                                <li><a mat-raised-button style="width: 120px; padding: 0;" (click)='popUp()'> <span style="margin-left: 100%"> <img style="width: 25px; height: 25px;"
+                                    src='https://static.thenounproject.com/png/57788-200.png'> עזרה</span></a></li>
+                        <li><a mat-raised-button style="width: 120px; padding: 0;" (click)='Logout()'> <span style="margin-left: 100%"> <img style="width: 25px; height: 25px;"
+                                    src='data:image/png;base64,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'>להתנתק</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+
+
+</div><br><br>

@@ -1,0 +1,39 @@
+<div class="products">
+
+  <div class="row" style='padding: 0px;'>
+
+    <div class="col-4" *ngIf='stock.fullLeft'>
+      <div *ngFor='let i of stock.leftSide' class="prod">
+        <div class="border" style="margin-right: 50px;">
+          <a><img style="position: absolute" src={{i.getColorCloth()[0].getClothPic()[0]}} width="200px" height="200px"
+              style="cursor: pointer; display: inline-block;" (click)='description(i)'> </a>
+
+        </div>
+
+        <br>
+
+      </div>
+    </div>
+
+
+    <div class="col-4" *ngIf='stock.fullCenter' style='padding: 0px;'>
+      <div *ngFor='let i of stock.centerSide' class="prod">
+        <div class="border" style="margin-left: 70px;">
+          <a><img src={{i.getColorCloth()[0].getClothPic()[0]}} width="250px" height="300px" style="cursor: pointer;"
+              (click)='description(i)'></a>
+        </div><br>
+      </div>
+    </div>
+
+
+    <div class="col-4" *ngIf='stock.fullRight'>
+      <div *ngFor='let i of stock.rightSide' class="prod">
+        <div class="border" style="margin-left: 200px;">
+          <a><img src={{i.getColorCloth()[0].getClothPic()[0]}} width="200px" height="200px"
+              style="cursor: pointer; margin-left: 50px;" (click)='description(i)'></a>
+        </div><br>
+      </div>
+    </div>
+
+  </div>
+</div>

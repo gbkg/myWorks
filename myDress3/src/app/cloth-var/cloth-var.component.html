@@ -1,0 +1,108 @@
+<div class="stylingBox">
+
+
+  <div class="row">
+    <div class="col-12" style="position: absolute; z-index: 1;">
+      <app-nav-bar></app-nav-bar>
+    </div>
+  </div><br><br><br>
+   
+
+  
+      <!--filters-->
+      <div class="row">
+  
+  
+
+        <div class="col-2">
+          <p>מעניין אותי:</p>
+        </div>
+
+
+          <div class="col-4" style="z-index: 1;">
+              <div class="wrap">
+    
+                  <mat-form-field>
+                      <select matNativeControl required>
+                        <option value="1">פרטים בודדים</option>
+                        <option value="2">תלבושת שלמה</option>
+                      </select>
+                      </mat-form-field>
+                  
+                </div>
+            </div>
+    
+    
+            <div class="col-4" style="z-index: 1;">
+                <mat-form-field>
+                    <select matNativeControl required (change)='select($event)' [(ngModel)] = 'friendSelect'>
+                      <option [value]='false'>עבורי</option>
+                      <option [value]='true'>לא עבורי</option>
+                    </select>
+                    </mat-form-field>
+              </div>
+
+
+
+              <div class="col-2">
+                <button (click)='filsterStat()' mat-button>מַסְנֵן <img src="data:image/png;base64,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" width="15px" height="15px"></button>
+              </div>
+
+  
+              </div><br><br><br>
+
+
+
+              <div class="friendMeasure" *ngIf='connect.friendSelect'>
+
+                <table style="border-style: solid; border-color: rgb(218, 211, 208); height: 100%; width: 900px;">
+
+                  <app-friend-precise-size *ngIf='connect.friendPreciseStyle'></app-friend-precise-size>
+                  <app-friend-approximate-size *ngIf='!connect.friendPreciseStyle'></app-friend-approximate-size>
+                  </table>
+
+
+              </div><br>
+  
+  
+              <div class="row" *ngIf='user.filter'>
+                <div class="col-12" style='padding: 0px;'>
+                  <app-categories></app-categories>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12" style='padding: 0px;'>
+                  <app-products></app-products>
+                  </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="explanation" *ngIf='connect.explanation' style="position: absolute; z-index: 2;">
+    <div class="row">
+      <div class="col-2">
+        <a (click)='close()' class="close"></a>
+      </div>
+      <div class="col-6">
+
+      <p class="par">הצעה מיוחדת לסגנון בשבילך</p>
+    </div>
+
+      </div>
+
+        <p style="margin-left: 350px;">לחיצה קלה על הסרטון והכל יהיה ברור.</p>
+
+    <iframe width="560" height="315" style="margin-left: 50px;" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
+
+  </div>
