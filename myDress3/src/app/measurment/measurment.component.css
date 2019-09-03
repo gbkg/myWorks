@@ -11,10 +11,10 @@
   }
 
   .stylingBox2{
-    margin-top: 150px;
+    margin-top: 200px;
     background-color: white;
     width: 550px;
-    margin-right: 800px;
+    margin-right: 500px;
     border-style: solid;
     overflow: auto;
     position:relative;
@@ -54,4 +54,6 @@
     z-index:1;
   }
 
-  
+  .mat-button-toggle {
+    width: 100px;
+  }

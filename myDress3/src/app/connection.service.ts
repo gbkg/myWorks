@@ -12,6 +12,8 @@ export class ConectionService {
   explanation:boolean;
   addedItem: boolean;
 
+  connectionVerify: boolean;
+
   constructor(
     private router: Router,
     private cookie: CookieService,
@@ -20,6 +22,8 @@ export class ConectionService {
     this.explanation = false;
     this.addedItem = false;
     this.friendPreciseStyle = true;
+
+    this.connectionVerify = false;
   }
 
 

@@ -22,6 +22,7 @@ export class MeasurmentComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.style.connected = true;
     this.fullField = true;
     this.style.precise = true;
     this.style.forms = {chest: '', height: '', waist: '', hips: '', skin: ''};
@@ -33,6 +34,7 @@ export class MeasurmentComponent implements OnInit {
   }
 
   save(){
+    debugger
     this.style.enterMyStyle();
   }
 

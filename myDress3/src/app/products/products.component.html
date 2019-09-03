@@ -5,9 +5,10 @@
     <div class="col-4" *ngIf='stock.fullLeft'>
       <div *ngFor='let i of stock.leftSide' class="prod">
         <div class="border" style="margin-right: 50px;">
-          <a><img style="position: absolute" src={{i.getColorCloth()[0].getClothPic()[0]}} width="200px" height="200px"
-              style="cursor: pointer; display: inline-block;" (click)='description(i)'> </a>
+          <a><img src={{i.getColorCloth()[0].getClothPic()[0]}} width="200px" height="200px"
+              style="cursor: pointer;" (click)='description(i)'>
 
+          </a>
         </div>
 
         <br>

@@ -20,6 +20,7 @@ export class MyStyleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.user.tempAcc
     this.style.forms.waist = '';
     this.style.forms.hips = '';
     this.style.forms.chest = '';
@@ -33,6 +34,10 @@ export class MyStyleComponent implements OnInit {
     this.wrongPss = false;
 
     this.user.restoreAcc();
+
+    if(localStorage.getItem('email')){
+      this.user.fbLoged = true;
+    }
 
   }
 

@@ -25,7 +25,7 @@
       
           <td>
               <div id="thumbwrap">
-                  <a class="thumb" href="#"><img class="sign" style="width: 25px; height: 25px; display: inline-block; padding: 0px;" src="https://static.thenounproject.com/png/57788-200.png"><span><img src="assets/help/height_help.jpg" alt="" width="400px;" height="520px;"></span></a>
+                  <a class="thumb"><img class="sign" style="width: 25px; height: 25px; display: inline-block; padding: 0px;" src="https://static.thenounproject.com/png/57788-200.png"><span><img src="assets/help/height_help.jpeg" alt="" width="400px;" height="520px;" style="border-style:solid; border-width:1px;"></span></a>
               </div>
           </td>
           <td>
@@ -33,12 +33,22 @@
           </td>
       
             <td>
-            <form class="example-form">
+            <form class="example-form" *ngIf='style.precise'>
 
                 <mat-form-field class="example-full-width">
                     <input type="number" [(ngModel)]='style.forms.height' name="height" matInput [placeholder]="style.errHeight ? '136-220 סמ' : 'סמ' " [ngStyle]="{'background-color': style.errHeight ? 'rgb(250, 160, 160)' : 'white'}">
                 </mat-form-field>
               </form>
+
+                <mat-form-field style="margin-left: 100%" *ngIf='!style.precise'>
+                    <mat-label>גובה</mat-label>
+                    <select matNativeControl required [(ngModel)]='style.forms.height'>
+                        <option value=""></option>
+                      <option value="148">קבוצה 1: עד 156 ס"מ</option>
+                      <option value="157">קבוצה 2: 157-169 ס"מ</option>
+                      <option value="175">קבוצה 3: 170 ס"מ ומעלה</option>
+                    </select>
+                    </mat-form-field>
             </td>
       
             </tr>
@@ -48,7 +58,7 @@
       
                 <td>
                     <span class="popup2" data-popuptext="description">
-                  <img style="width: 25px; height: 25px; display: inline-block;" src="https://static.thenounproject.com/png/57788-200.png">
+                        <a class="thumb"><img style="width: 25px; height: 25px; display: inline-block;" src="https://static.thenounproject.com/png/57788-200.png"><span style="margin-left: 450px;"><img src="assets/help/skin_color.jpeg" alt="" width="400px;" height="520px;" style="border-style:solid; border-width:1px;"></span></a>
                 </span>
                 </td>
                 <td>
@@ -56,15 +66,15 @@
                 </td>
             
                   <td>
-                      <mat-form-field>
+                      <mat-form-field style="margin-left: 100%">
                           <mat-label>צבע עור</mat-label>
                           <select matNativeControl required [(ngModel)]='style.forms.skin'>
                               <option value=""></option>
-                            <option value="בהיר מאוד">בהיר מאוד</option>
-                            <option value="בהיר">בהיר</option>
-                            <option value="בינוני">בינוני</option>
-                            <option value="כהה">כהה</option>
-                            <option value="כהה מאוד">כהה מאוד</option>
+                            <option value="light">בהיר מאוד</option>
+                            <option value="light">בהיר</option>
+                            <option value="not_light">בינוני</option>
+                            <option value="not_light">כהה</option>
+                            <option value="not_light">כהה מאוד</option>
                           </select>
                           </mat-form-field>
                   </td>
@@ -90,9 +100,7 @@
 
 
 
-<div class="row">
-
-    <table style="margin-right: 350px;">
+    <table style="margin-right: 490px;">
   
       <td>
           <div class="example-button-row" style="padding-left: 40px;">
@@ -107,8 +115,6 @@
             </div>
           </td>
           </table>
-  
-            </div>
 
 
   

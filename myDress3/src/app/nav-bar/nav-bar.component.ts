@@ -23,13 +23,15 @@ export class NavBarComponent implements OnInit {
     this.user.restoreAcc();
     if(this.user.fbLoged == true){
       this.fbPic = localStorage.getItem('pic');
-    }else{
-      this.fbPic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMScfxPLAWx-25DKqRhzg6C_-YaYI5I37Qv--Mh_GuC12XFFWR';
     }
 
     this.clicked = false;
 
     this.explain = false;
+
+    if(localStorage.getItem('email')){
+      this.user.fbLoged = true;
+    }
 
 
   }

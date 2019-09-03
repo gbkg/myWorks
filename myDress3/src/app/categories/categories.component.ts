@@ -24,7 +24,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   selectItem(selected) {
-    debugger
     this.dress;
     this.cloth.clothSelect(selected);
   }

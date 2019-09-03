@@ -7,12 +7,14 @@ import { StyleSellectService } from '../style-select.service';
   styleUrls: ['./size-option.component.css']
 })
 export class SizeOptionComponent implements OnInit {
+  selectedDevice: boolean;
 
   constructor(
     private style: StyleSellectService,
   ) { }
 
   ngOnInit() {
+    this.selectedDevice = true;
     if(localStorage.getItem('size-style')){
       this.style.precise = JSON.parse(localStorage.getItem('size-style'));
     }else{
@@ -21,6 +23,7 @@ export class SizeOptionComponent implements OnInit {
   }
 
   onChange(ans){
+    debugger;
     var boolValue = JSON.parse(ans);
     this.style.precise = boolValue;
     localStorage.setItem('size-style', ans);

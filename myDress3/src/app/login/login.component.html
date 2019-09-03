@@ -2,7 +2,7 @@
 
 
         <div class="left-box">
-          <h1> הרשמה </h1>
+          <h1 style="text-align: center"> התחברות </h1>
           <input type="text" [(ngModel)]='loginUserData.email' name="Email" placeholder="אימייל"/>
           <input type="password" [(ngModel)]='loginUserData.password' name="Password" placeholder="סיסמא"/>
           <p style="color: red" *ngIf='loginErr'>*password not match with user</p>
@@ -17,28 +17,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <div id="box" style="margin-top: 40px;">
-        <a  (click)='login()'>התחבר</a>
+        <a  (click)='login()'>התחברות</a>
     </div>       
         <!---->
 
     </div>
     
-        <a class="backBtn" routerLink='/newAcc'>להרשם</a>
+        <a class="backBtn" routerLink='/newAcc'>הרשמה</a>
     
     
         <div class="right-box">
-          <span class="signinwith">התחבר בעזרת<br>Facebook </span>
-          <button class="social facebook" (click)='facebookLogin()'>התחבר בעזרת Facebook</button>
+          <span class="signinwith">התחברות בעזרת<br>Facebook </span>
+          <button class="social facebook" (click)='facebookLogin()'>התחברות בעזרת Facebook</button>
 
 
           <div class="col-12">  
-         
-            
-            <input type="checkbox" id="_checkbox" [checked]='verify' (change)='verify = !verify' name='_checkbox'>
-            <label for="_checkbox" style="left: 180px;">
-              <div id="tick_mark"></div>              
-            </label>  
-            <a class="verify" href="#" style="margin-left: 140px;">תקנון</a>
 
 
             

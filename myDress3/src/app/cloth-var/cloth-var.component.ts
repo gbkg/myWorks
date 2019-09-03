@@ -13,7 +13,7 @@ export class ClothVarComponent implements OnInit {
   friendSelect:string;
   fullField: boolean;
 
-
+  Active: boolean;
 
   constructor(
     private user: UserService,
@@ -22,6 +22,8 @@ export class ClothVarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.Active = false;
+    this.style.connected = false;
     if(localStorage.getItem('preciseStyle')){
     this.connect.friendPreciseStyle = JSON.parse(localStorage.getItem('preciseStyle'));
     this.style.restoreStyle();
@@ -67,6 +69,11 @@ export class ClothVarComponent implements OnInit {
     }
 
     }
+  }
+
+  activate(){
+    debugger
+    this.Active = !this.Active;
   }
 
 }

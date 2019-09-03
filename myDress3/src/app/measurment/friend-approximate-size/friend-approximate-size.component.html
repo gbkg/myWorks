@@ -108,12 +108,12 @@
                         <tr>
                                 <td>גובה:</td>
                                 <td>
-                                        <mat-form-field>
-                                                <input type="number" [(ngModel)]='style.approximateFormsFriend.height'
-                                                        name="height" matInput
-                                                        [placeholder]="style.errHeight ? '136-220 סמ' : 'סמ' "
-                                                        [ngStyle]="{'background-color': style.errHeight ? 'rgb(250, 160, 160)' : 'white'}">
-                                        </mat-form-field>
+                                        <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                                [(ngModel)]='style.approximateFormsFriend.height'>
+                                                <mat-button-toggle value='נמוך'>נמוך</mat-button-toggle>
+                                                <mat-button-toggle value='ממוצע'>ממוצע</mat-button-toggle>
+                                                <mat-button-toggle value='גבוה'>גבוה</mat-button-toggle>
+                                        </mat-button-toggle-group>
                                 </td>
                         </tr>
 
@@ -122,7 +122,8 @@
                                 <td>
                                         <mat-form-field>
                                                 <mat-label>צבע עור</mat-label>
-                                                <select matNativeControl required [(ngModel)]='style.approximateFormsFriend.skin'>
+                                                <select matNativeControl required
+                                                        [(ngModel)]='style.approximateFormsFriend.skin'>
                                                         <option value=""></option>
                                                         <option value="בהיר מאוד">בהיר מאוד</option>
                                                         <option value="בהיר">בהיר</option>
@@ -138,8 +139,8 @@
                         <tr></tr>
 
                         <tr>
-                                        <td><button mat-button (click)='save()'>שמירה</button></td>
-                                        <td><button mat-button (click)='approximate()'>מדדים מדויקים</button></td>
+                                <td><button mat-button (click)='save()'>שמירה</button></td>
+                                <td><button mat-button (click)='approximate()'>מדדים מדויקים</button></td>
                         </tr>
 
                 </table>

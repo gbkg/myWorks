@@ -1,9 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const Post = require('./models/post');
 
 const app = express();
+//pirozok
+mongoose.connect('mongodb+srv://gabi:pirozok@cluster0-zk3qt.mongodb.net/node-angular?retryWrites=true&w=majority',{ useNewUrlParser: true })
+.then(() => {
+    console.log('Connected to database');
+})
+.catch(() => {
+    console.log('Connection failed');
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,12 +32,12 @@ app.post('/api/posts', (req, res, next) => {
         title: req.body.title,
         content: req.body.content
     });
-    console.log(post);
+    post.save();
     res.status(201).json({
         message: 'Post added successfully'
     });
 });
-//@pirozok100
+
 app.use('/api/posts', (req, res, next) => {
     const posts = [
         {id: 'dcsdc', 

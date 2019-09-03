@@ -24,36 +24,3 @@
     border-color: rgb(189, 183, 183);
     width: 200px;
 }
-
-
-/*add to favorite*/
-
-
-
-[id='toggle-heart'] {
-    position: absolute;
-    left: 100vw;
-  }
-
-  [for='toggle-heart'] {
-    color: #aab8c2;
-  }
-  
-  [id='toggle-heart']:checked + label {
-    color: #e2264d;
-  }
-  
-  [for='toggle-heart'] {
-    font-size: 2em;
-    cursor: pointer;
-  }
-
-  #price{
-    display: inline-block;
-    margin-left: 20px;
-  }
-
-  
-
-
-

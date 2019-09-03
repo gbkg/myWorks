@@ -88,7 +88,11 @@ export class UserService {
       localStorage.setItem('email', Email)
       localStorage.setItem('FirstName', fName)
       localStorage.setItem('LastName', lName)
-      this.connect.pageMove('clothVar');
+      if(this.tempAcc.getShape().getSkinColor() != undefined){
+        this.connect.pageMove('clothVar');
+      }else{this.connect.pageMove('measurment')}
+      this.fbLoged = true;
+      localStorage.setItem('pic', 'assets/icons/connectIcon.jpg');
     }
    }
 

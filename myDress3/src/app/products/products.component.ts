@@ -10,8 +10,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
-  isActive:boolean;
+  active: boolean;
 
   constructor(
     private stock: ClothStockService,
@@ -20,10 +19,11 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.isActive = false;
     this.stock.stock();
     this.stock.choosenCloth = this.stock.clothStock;
     this.stock.showCloth();
+
+    this.active = true;
 
   }
 

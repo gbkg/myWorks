@@ -24,6 +24,7 @@ export class StyleSellectService {
 
   precise: boolean; //size option
   updateFlag: boolean;
+  successFlag: boolean;
 
   forms = { chest: '', waist: '', hips: '', height: '', skin: '' };
   approximateForms = { height: '', skin: '', style1: '', style2: '' };
@@ -31,7 +32,8 @@ export class StyleSellectService {
   formsFriend = { chest: '', waist: '', hips: '', height: '', skin: '' };
   approximateFormsFriend = { height: '', skin: '', style1: '', style2: '' };
 
-  mySize = { height: '', chest: '', waist: '', hips: '', skin: '' };
+  mySize= { height: '', chest: '', waist: '', hips: '', skin: ''};
+  myDetail = { firstName: '', lastName: '', email: '', password: '', measurements: '' };
 
   constructor(
     private user: UserService,
@@ -53,6 +55,7 @@ export class StyleSellectService {
     this.fullField = true;
 
     this.updateFlag = false;
+    this.successFlag = false;
   }
 
   enterMyStyle() {
@@ -72,12 +75,12 @@ export class StyleSellectService {
       this.myApproximateShape(this.approximateForms.style1, this.approximateForms.style2, this.forms.height, this.forms.skin);
       this.forms = {chest: '', waist: '', hips: '', height: this.forms.height, skin: this.forms.skin};
       if(this.errApproximateStyle1 == false && this.errApproximateStyle2 == false && this.errHeight == false && this.forms.skin){
-        
-        if(localStorage.getItem('email' ) && !this.updateFlag){
+        /*
+        if(localStorage.getItem('email' ) && !this.updateFlag && this.successFlag){
           this.conect.pageMove('clothVar');
         }else{
           this.connected = false;
-        }
+        }*/
       }
     }else{
 
@@ -85,11 +88,11 @@ export class StyleSellectService {
       this.approximateForms = {height: '', skin: '', style1: '', style2: ''};
       if(this.errChest == false && this.errHeight == false && this.errHips == false && this.errWaist == false && !this.updateFlag){
         this.forms.chest = ''; this.forms.height = ''; this.forms.hips = ''; this.forms.skin = ''; this.forms.waist = '';
-          if(localStorage.getItem('email') && !this.updateFlag){
+         /* if(localStorage.getItem('email') && !this.updateFlag){
         this.conect.pageMove('clothVar')
           }else{
             this.connected = false;
-          }
+          }*/
         }
     }
 
@@ -172,7 +175,7 @@ export class StyleSellectService {
 
   checkErrShape(newCheast, newHeight, newWaist, newThigh, newskin, style1, style2){
 
-    if (newHeight < 136 || newHeight > 220) {
+    if ((newHeight < 136 || newHeight > 220) && (newHeight != 'נמוך' || newHeight != 'ממוצע' || newHeight != 'גבוה')) {
       this.errHeight = true;
     } else {
       this.errHeight = false;
@@ -238,9 +241,15 @@ export class StyleSellectService {
       this.mySize.hips = newThigh;
       this.mySize.waist = newWaist;
       this.mySize.skin = newskin;
+      this.myDetail.firstName = this.user.tempAcc.getFName();
+      this.myDetail.lastName = this.user.tempAcc.getLName();
+      this.myDetail.password = this.user.tempAcc.getPass();
+      this.myDetail.email = this.user.tempAcc.getEmail();
 
       var tempSize = JSON.stringify(this.mySize);
+      this.myDetail.measurements = tempSize;
       localStorage.setItem('my-shape', tempSize);
+      
 
       let headers = new HttpHeaders({
         'token': localStorage.token
@@ -249,12 +258,14 @@ export class StyleSellectService {
         headers: headers
       }
 
-      this._auth.sizeDimension({ dimensions: tempSize }, options)
+      this._auth.registerUser(this.myDetail)
         .subscribe(
           res => {
             console.log(res)
-            if (res["success"]) {
+            if (res.success) {
               localStorage.setItem('my-shape', tempSize);
+              this.successFlag = true;
+              this.conect.pageMove('clothVar');
             }
           },
           err => console.log(err)

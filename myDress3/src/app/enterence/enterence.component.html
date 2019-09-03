@@ -4,11 +4,11 @@
     
 
 
-      <div class="col-6">
-        <p class="par">special style suggestion for you</p>
+      <div class="col-10" style="left: 100px;">
+        <p class="par">הצעות סטיילינג במיוחד בשבילך</p>
       </div>
 
-        <div class="col-6">
+        <div class="col-2">
           <div class="row">
           <!--user-->  
             <div *ngIf='user.loged' class="col-6">
@@ -32,7 +32,7 @@
 
           <!--log-->
             <div *ngIf='!user.loged'>
-              <p><a routerLink='/login'>Login</a> / <a routerLink='/newAcc'>registar</a></p>
+              <p><a routerLink='/login'>התחבר</a> / <a routerLink='/newAcc'>הרשם</a></p>
             </div>
             
             
@@ -53,11 +53,11 @@
 
 
     </div>
-    <p class="explain">לחיצה קטנה על <span>play</span> והכל יתבהר</p>
+    <p class="explain">לא ברור מה קורה פה? הפעילו את הסרטון והכל יתבהר</p>
 
     <iframe width="560" height="315" style="margin-left: 20%;" src="https://www.youtube.com/embed/1ozGKlOzEVc" frameborder="0" allowfullscreen></iframe>
 
 
 
-    <button class="button button4" routerLink='/measurment'>continue without signing</button>
+    <button class="button button4" routerLink='/measurment'>המשך ללא הרשמה</button>
 </div>

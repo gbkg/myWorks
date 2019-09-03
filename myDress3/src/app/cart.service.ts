@@ -25,7 +25,6 @@ export class CartService {
   refreshFlag:boolean;
 
   tempCart: string[];
-  private _cartUrl = 'http://localhost:3000/user/cart/getCart'; //backend api url (login)
 
   constructor(
     private user: UserService,
@@ -63,6 +62,14 @@ export class CartService {
     if(this.refreshFlag){
       localStorage.setItem('cartArray', '');
     }
+    this._auth.sendCart(color, size, barcode, pic, Qty, money, localStorage.getItem('email'))
+    .subscribe(
+      res =>{
+        console.log(res);
+      },
+      err => console.log(err)
+    );
+
     this.user.tempAcc.setMyCart(color, size, barcode, pic, Qty, money);
 
     this.addCart.barcode = barcode;
