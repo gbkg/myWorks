@@ -1,0 +1,12 @@
+<div class="box">
+    <table>
+        <td *ngFor='let i of weather.arrayFavorites' style="cursor: pointer" (click)='info(i["city"])'>
+            <div class="smallBox" style="margin-left: 40%; text-align: center">
+                {{i['city']}}<br>
+                {{i['temperature']}} C<br>
+                {{i['cloudes']}}<br><br>
+                <button mat-button (click)='removeFavorite(i["city"])'>Remove</button>
+            </div>
+        </td>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+<mat-toolbar color="white">
+    <mat-toolbar-row>
+      <span>Herolo weather Task</span>
+      <span>
+      <mat-tab-group style="margin-left: 900px;" #tabRef (selectedTabChange)="pageChange(tabRef.selectedIndex)">
+        <mat-tab label="Home"></mat-tab>
+        <mat-tab label="Favorites"></mat-tab>
+      </mat-tab-group>
+    </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+    <app-home *ngIf='weather.pageFlag'></app-home>
+    <app-favorites *ngIf='!weather.pageFlag'></app-favorites>
+
+

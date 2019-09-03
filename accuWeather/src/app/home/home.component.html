@@ -1,0 +1,81 @@
+<div class="row">
+<p style="margin-left: 45%">
+        <mat-form-field appearance="legacy">
+          <mat-label>Search</mat-label>
+          <input matInput placeholder="City" [(ngModel)]='weather.city'>
+          <mat-icon matSuffix style="cursor: pointer" (click)='getLocation()'>search</mat-icon>
+        </mat-form-field>
+        <span style="color: red" *ngIf='weather.falseLocationFlag'>*No such location</span>
+      </p>
+      <div class="box">
+          <div class="smallBox" style="display: inline-block">
+              <p>{{weather.city}}</p>
+        <p *ngIf='!temperatureToggle'>{{temperatur}} C</p>
+        <p *ngIf='temperatureToggle'>{{farTemperature}} F</p>
+        <button mat-button (click)='loading()'>Temperature toggle</button>
+    </div>
+
+
+    <!--Loading-->
+
+    <div class="loading" *ngIf='loadingP'>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <h2 class="HEROLO">HEROLO</h2>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+        <div class="obj"></div>
+      </div>
+
+    <!--Loading-->
+
+<!--favorites-->
+
+    <div class='container' style="display: inline-block; padding-left: 50%; padding-top: 20px; position: absolute">
+
+            <div class='checkboxes-container'>
+              <div class='control-group'>
+                <input class='red-heart-checkbox' id='red-check2' type='checkbox' (click)='addToFavorite()' [(ngModel)]='myFav'>
+                <label for='red-check2'>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <!--favorites-->
+
+        </div>
+<!-- *ngIf='flag'-->
+<h1 style="position: absolute; bottom: 200px; right: 700px; display: inline-block" >Wind Speed: {{windSpeed}} Km/h</h1><br>
+<h1 style="position: absolute; bottom: 150px; right: 800px; display: inline-block" >{{weatherText}}</h1><br>
+    <div style="position: absolute;bottom: 5px; right: 200px;">
+      <table>
+        <tr>
+        <td *ngFor='let i of daysArray'>
+            <div class="smallBox"  style="text-align: center;">
+                <span style="size: 50px; font-size: 25px;">{{i["day"]}}</span><br>
+                <span style="size: 50px; font-size: 25px;">{{i["date"]}}</span><br>
+                <span style="size: 50px; font-size: 25px;" *ngIf='!temperatureToggle'>{{i["temperatur"]}} C</span>
+                <span style="size: 50px; font-size: 25px;" *ngIf='temperatureToggle'>{{i["fahrenheitTemp"]}} F</span>
+            </div>
+          </td>
+        </tr>
+
+          </table>
+        </div>
+  
+      </div>
+
+
+

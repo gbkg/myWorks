@@ -1,0 +1,172 @@
+.box{
+    border-style: solid;
+    height: 700px;
+    width: 80%;
+    margin-left: 150px;
+}
+
+.smallBox{
+    border-style: groove;
+    height: 150px;
+    width: 150px;
+    margin-right: 50px;
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+/*favorites*/
+
+.red-heart-checkbox {
+    visibility: hidden;
+  }
+  .red-heart-checkbox + label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 30px;
+    padding-left: 15px;
+    transition: all 0.2s;
+  }
+  .red-heart-checkbox:checked + label:before {
+    content: "";
+    color: #f00;
+  }
+  .red-heart-checkbox + label:before {
+    width: 31.5px;
+    height: 30px;
+    content: "";
+    position: absolute;
+    margin-left: -48px;
+    margin-top: 3px;
+    font-family: FontAwesome;
+    font-size: 30px;
+    content: "";
+    transition: all 0.3s;
+    color: #888;
+  }
+  .red-heart-checkbox + label:hover:before {
+    transform: scale(1.2);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    left: 500px;
+  }
+  
+  .control-group {
+    margin: 3px;
+  }
+
+
+  /*LOADING*/
+
+  .load{
+    margin: 0;
+    padding: 0;
+    background: grey;
+  }
+  
+  .loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .obj{
+    width: 5px;
+    height: 40px;
+    background: rgb(91, 91, 204);
+    margin: 0.3px;
+    border-radius: 10px;
+    animation: loading 0.8s infinite;
+  }
+  
+  .obj:nth-child(2){
+    animation-delay: 0.1s;
+  }
+  
+  .obj:nth-child(3){
+    animation-delay: 0.2s;
+  }
+  
+  .obj:nth-child(4){
+    animation-delay: 0.3s;
+  }
+  
+  .obj:nth-child(5){
+    animation-delay: 0.4s;
+  }
+  
+  .obj:nth-child(6){
+    animation-delay: 0.5s;
+  }
+  
+  .obj:nth-child(7){
+    animation-delay: 0.6s;
+  }
+  
+  .obj:nth-child(8){
+    animation-delay: 0.7s;
+  }
+  
+  
+  
+  
+  .obj:nth-child(10){
+    animation-delay: 0.1s;
+  }
+  
+  .obj:nth-child(11){
+    animation-delay: 0.2s;
+  }
+  
+  .obj:nth-child(12){
+    animation-delay: 0.3s;
+  }
+  
+  .obj:nth-child(13){
+    animation-delay: 0.4s;
+  }
+  
+  .obj:nth-child(14){
+    animation-delay: 0.5s;
+  }
+  
+  .obj:nth-child(15){
+    animation-delay: 0.6s;
+  }
+  
+  .obj:nth-child(16){
+    animation-delay: 0.7s;
+  }
+  
+  @keyframes loading{
+    0%{
+      height: 0;
+    }
+  
+    50%{
+      height: 40px;
+    }
+  
+    100%{
+      height: 0;
+    }
+  }
+  
+  
+  .HEROLO{
+    color: rgb(91, 91, 204);
+  }
